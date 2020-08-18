@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "f1624026-3677-4ced-882f-32e0672bbbc9",
+		"name": "Dockerized_SpringBoot_Webflux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8090/springBootWebflux/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topic_id\":\"java\",\n\t\"topic_name\":\"java programming\",\n\t\"topic_desc\":\"java is easy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/java",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/update/java",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topic_id\":\"java\",\n\t\"topic_name\":\"java programming\",\n\t\"topic_desc\":\"java is not easy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/update/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"update",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/getById?id=java",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/getById?id=java",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "java"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/getById?id=java&name=java programming",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/getById?id=java&name=java programming",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "java"
+						},
+						{
+							"key": "name",
+							"value": "java programming"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/topics/delete/java",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/topics/delete/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"topics",
+						"delete",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/books/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"book_id\":\"java book\",\n\t\"book_name\":\"java programming book\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/books/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/books/java book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/books/java book",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"books",
+						"java book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/books/update/java book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"book_id\":\"java book\",\n\t\"book_name\":\"java programming the book\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/books/update/java book",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"books",
+						"update",
+						"java book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8090/springBootWebflux/books/delete/java book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/springBootWebflux/books/delete/java book",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"springBootWebflux",
+						"books",
+						"delete",
+						"java book"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "98528f9d-6a63-4115-9971-ccd07fae0e67",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d3402a91-f337-4224-94a0-34191d912da4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
