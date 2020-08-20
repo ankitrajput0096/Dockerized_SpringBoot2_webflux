@@ -12,7 +12,7 @@ services:
       POSTGRES_USER: ankit
     volumes:
       - postgres-data:/var/lib/postgresql/postdata
-  backend:
+  springbootwebflux:
     build:
       context: ./Spring_boot_2_webflux
     command: mvn clean spring-boot:run
@@ -21,3 +21,13 @@ services:
       - "8090:8090"
     depends_on:
       - db
+  springbootwebclient:
+    build:
+      context: ./Spring_boot_2_webclient
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - springbootwebflux
+    depends_on:
+      - springbootwebflux

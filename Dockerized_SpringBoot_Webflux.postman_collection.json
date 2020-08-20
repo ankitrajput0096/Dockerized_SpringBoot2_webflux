@@ -345,6 +345,132 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/springBootWebClient/topics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/springBootWebClient/topics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springBootWebClient",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/springBootWebClient/topics/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topic_id\":\"java\",\n\t\"topic_name\":\"java programming\",\n\t\"topic_desc\":\"java is easy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/springBootWebClient/topics/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springBootWebClient",
+						"topics",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/springBootWebClient/topics/java",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/springBootWebClient/topics/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springBootWebClient",
+						"topics",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/springBootWebClient/topics/update/java",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topic_id\":\"java\",\n\t\"topic_name\":\"java programming\",\n\t\"topic_desc\":\"java is not easy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/springBootWebClient/topics/update/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springBootWebClient",
+						"topics",
+						"update",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/springBootWebClient/topics/delete/java",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/springBootWebClient/topics/delete/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springBootWebClient",
+						"topics",
+						"delete",
+						"java"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
