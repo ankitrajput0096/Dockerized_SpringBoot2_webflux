@@ -15,7 +15,8 @@ import java.util.stream.Collectors;
 
 @Slf4j     // NOTE : way to use logger using lambok library
 @Service
-public class PersistentDataManagerBook implements DataManagerBook {
+public class PersistentDataManagerBook
+        implements DataManagerBook {
 
     @Autowired
     private BookRepository bookRepository;
@@ -25,7 +26,9 @@ public class PersistentDataManagerBook implements DataManagerBook {
 
     public List<BookBo> getAllBooks() {
         log.info("Returning all the books from db");
-        return this.bookRepository.findAll().stream().map(e -> this.bookBoEntityMapper.toBo(e)).collect(Collectors.toList());
+        return this.bookRepository.findAll().stream()
+                .map(e -> this.bookBoEntityMapper.toBo(e))
+                .collect(Collectors.toList());
     }
 
     public BookBo getBook(String id) {
@@ -42,14 +45,17 @@ public class PersistentDataManagerBook implements DataManagerBook {
     }
 
     public void addBook(BookBo bookBo) {
-        log.info("Adding new book in the db with details : {}", bookBo.toString());
-        this.bookRepository.save(this.bookBoEntityMapper.toEntity(bookBo));
+        log.info("Adding new book in the db with details : {}",
+                bookBo.toString());
+        this.bookRepository.save(
+                this.bookBoEntityMapper.toEntity(bookBo));
     }
 
     public void updateBook(BookBo bookBo, String id) {
         log.info("Updating the existing book with id : {}", id);
         this.bookRepository.deleteById(id);
-        this.bookRepository.save(this.bookBoEntityMapper.toEntity(bookBo));
+        this.bookRepository.save(
+                this.bookBoEntityMapper.toEntity(bookBo));
     }
 
     public void deleteBook(String id) {

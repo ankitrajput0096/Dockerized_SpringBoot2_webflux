@@ -6,7 +6,8 @@ import com.springboot.webflux.mappers.BoEntityMapperIface;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BookBoEntityMapper implements BoEntityMapperIface<BookBo, Book> {
+public class BookBoEntityMapper
+        implements BoEntityMapperIface<BookBo, Book> {
 
     @Override
     public BookBo toBo(Book book) {

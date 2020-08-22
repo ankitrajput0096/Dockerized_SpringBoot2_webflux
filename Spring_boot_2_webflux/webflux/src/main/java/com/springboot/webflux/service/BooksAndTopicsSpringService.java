@@ -18,7 +18,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class BooksAndTopicsSpringService implements BooksAndTopicsSpringIface {
+public class BooksAndTopicsSpringService
+        implements BooksAndTopicsSpringIface {
 
     @Autowired
     private DataManagerTopic dataManagerTopic;
@@ -38,7 +39,8 @@ public class BooksAndTopicsSpringService implements BooksAndTopicsSpringIface {
 
     public List<TopicDto> getAllTopicsDtos() {
         return this.getAllTopics().stream()
-                .map(e -> this.topicDtoBoMapper.toDto(e)).collect(Collectors.toList());
+                .map(e -> this.topicDtoBoMapper.toDto(e))
+                .collect(Collectors.toList());
     }
 
     public TopicBo getTopic(String id) {
@@ -91,7 +93,8 @@ public class BooksAndTopicsSpringService implements BooksAndTopicsSpringIface {
 
     public List<BookDto> getAllBookDtos() {
         return this.getAllBooks().stream()
-                .map(e -> this.bookDtoBoMapper.toDto(e)).collect(Collectors.toList());
+                .map(e -> this.bookDtoBoMapper.toDto(e))
+                .collect(Collectors.toList());
     }
 
     public BookBo getBook(String id) {

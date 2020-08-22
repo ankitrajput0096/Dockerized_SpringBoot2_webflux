@@ -16,7 +16,8 @@ import java.util.Date;
 // NOTE : Prefer this way to create entity classes
 
 @Entity
-@Table(name="book")     // This will be the name to table to store 'book' objects in db.
+@Table(name="book")
+// This will be the name to table to store 'book' objects in db.
 @Setter
 @Getter
 @Builder
@@ -26,10 +27,14 @@ public class Book {
 
     @Id
     @NotNull
-    @Column(name = "book_id", nullable = false)         // This will be the name of column to store 'id' member field of book object in db table
+    @Column(name = "book_id", nullable = false)
+    // This will be the name of column to store 'id'
+    // member field of book object in db table
     private String id;
 
-    @Column(name = "book_name")       // This will be the name of column to store 'name' member field of book object in db table
+    @Column(name = "book_name")
+    // This will be the name of column to store 'name'
+    // member field of book object in db table
     private String name;
 
     @Column(name = "created_at", nullable = false)

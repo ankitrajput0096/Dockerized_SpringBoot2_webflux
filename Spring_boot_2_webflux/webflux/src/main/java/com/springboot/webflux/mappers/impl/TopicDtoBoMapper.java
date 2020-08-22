@@ -6,7 +6,8 @@ import com.springboot.webflux.mappers.DtoBoMapperIface;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TopicDtoBoMapper implements DtoBoMapperIface<TopicBo, TopicDto> {
+public class TopicDtoBoMapper
+        implements DtoBoMapperIface<TopicBo, TopicDto> {
 
     @Override
     public TopicBo toBo(TopicDto topicDto) {

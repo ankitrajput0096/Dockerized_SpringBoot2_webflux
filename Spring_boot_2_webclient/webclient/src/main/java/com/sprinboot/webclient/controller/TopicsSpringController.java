@@ -18,12 +18,15 @@ public class TopicsSpringController {
 
     @RequestMapping(value = "/topics")
     public ResponseEntity<Flux<TopicDto>> listOfTopics() {
-        return ResponseEntity.ok().body(this.topicsSpringService.getAllTopicsDtos());
+        return ResponseEntity.ok().body(
+                this.topicsSpringService.getAllTopicsDtos());
     }
 
     @RequestMapping(value = "/topics/{id}")
-    public ResponseEntity<Mono<TopicDto>> getRequiredTopic(@PathVariable String id) {
-        return ResponseEntity.ok().body(this.topicsSpringService.getTopicDto(id));
+    public ResponseEntity<Mono<TopicDto>> getRequiredTopic(
+            @PathVariable String id) {
+        return ResponseEntity.ok().body(
+                this.topicsSpringService.getTopicDto(id));
     }
 
     //In this json object is sent
@@ -35,13 +38,17 @@ public class TopicsSpringController {
      * }
      */
     @RequestMapping(value = "/topics/add", method = RequestMethod.POST)
-    public ResponseEntity<Mono<String>> addTopic(@RequestBody TopicDto topicDto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(this.topicsSpringService.addTopicDto(topicDto));
+    public ResponseEntity<Mono<String>> addTopic(
+            @RequestBody TopicDto topicDto) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(this.topicsSpringService.addTopicDto(topicDto));
     }
 
     @RequestMapping(value = "/topics/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Mono<String>> updateTopic(@RequestBody TopicDto topicDto, @PathVariable String id) {
-        return ResponseEntity.status(HttpStatus.FOUND).body(this.topicsSpringService.updateTopicDto(topicDto, id));
+    public ResponseEntity<Mono<String>> updateTopic(
+            @RequestBody TopicDto topicDto, @PathVariable String id) {
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .body(this.topicsSpringService.updateTopicDto(topicDto, id));
     }
 
     //Url "localhost:8080/springBootJpa/topics/delete/java
@@ -49,5 +56,4 @@ public class TopicsSpringController {
     public ResponseEntity<Mono<String>> deleteTopic(@PathVariable String id) {
         return ResponseEntity.ok().body(this.topicsSpringService.deleteTopic(id));
     }
-
 }

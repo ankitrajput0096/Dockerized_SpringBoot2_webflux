@@ -13,7 +13,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class BookDto {   // Dto's are the object used to return by controller to client request.
+public class BookDto {
+    // Dto's are the object used to
+    // return by controller to client request.
 
     @JsonProperty("book_id")
     @NotNull

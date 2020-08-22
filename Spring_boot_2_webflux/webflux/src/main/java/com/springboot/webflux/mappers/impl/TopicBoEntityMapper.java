@@ -6,7 +6,8 @@ import com.springboot.webflux.mappers.BoEntityMapperIface;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TopicBoEntityMapper implements BoEntityMapperIface<TopicBo, Topic> {
+public class TopicBoEntityMapper
+        implements BoEntityMapperIface<TopicBo, Topic> {
 
     @Override
     public TopicBo toBo(Topic topic) {
@@ -19,6 +20,9 @@ public class TopicBoEntityMapper implements BoEntityMapperIface<TopicBo, Topic> 
 
     @Override
     public Topic toEntity(TopicBo topicBo) {
-        return new Topic(topicBo.getId(), topicBo.getName(), topicBo.getDescription());
+        return new Topic(
+                topicBo.getId(),
+                topicBo.getName(),
+                topicBo.getDescription());
     }
 }

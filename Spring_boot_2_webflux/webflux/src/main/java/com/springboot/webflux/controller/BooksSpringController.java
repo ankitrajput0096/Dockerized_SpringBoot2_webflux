@@ -29,12 +29,14 @@ public class BooksSpringController {
 
     @RequestMapping(value = "/topics")
     public ResponseEntity<Flux<TopicDto>> listOfTopics() {
-        return ResponseEntity.ok().body(Flux.fromIterable(this.booksAndTopicsSpringService.getAllTopicsDtos()));
+        return ResponseEntity.ok().body(Flux.fromIterable(
+                this.booksAndTopicsSpringService.getAllTopicsDtos()));
     }
 
     @RequestMapping(value = "/topics/{id}")
     public ResponseEntity<Mono<TopicDto>> getRequiredTopic(@PathVariable String id) {
-        return ResponseEntity.ok().body(Mono.just(this.booksAndTopicsSpringService.getTopicDto(id)));
+        return ResponseEntity.ok().body(Mono.just(
+                this.booksAndTopicsSpringService.getTopicDto(id)));
     }
 
     //In this json object is sent
@@ -48,37 +50,47 @@ public class BooksSpringController {
     @RequestMapping(value = "/topics/add", method = RequestMethod.POST)
     public ResponseEntity<Mono<String>> addTopic(@RequestBody TopicDto topicDto) {
         this.booksAndTopicsSpringService.addTopicDto(topicDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(Mono.just("the new topic is created with details :" + topicDto.toString()));
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                Mono.just("the new topic is created with details :" + topicDto.toString()));
     }
 
     @RequestMapping(value = "/topics/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Mono<String>> updateTopic(@RequestBody TopicDto topicDto, @PathVariable String id) {
+    public ResponseEntity<Mono<String>> updateTopic(
+            @RequestBody TopicDto topicDto,
+            @PathVariable String id) {
         this.booksAndTopicsSpringService.updateTopicDto(topicDto, id);
-        return ResponseEntity.status(HttpStatus.FOUND).body(Mono.just("the existing topic is updated with details :" + topicDto.toString()));
+        return ResponseEntity.status(HttpStatus.FOUND).body(
+                Mono.just("the existing topic is updated with details :" + topicDto.toString()));
     }
 
     //Url "localhost:8080/springBootJpa/topics/delete/java
     @RequestMapping(value = "/topics/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Mono<String>> deleteTopic(@PathVariable String id) {
         this.booksAndTopicsSpringService.deleteTopic(id);
-        return ResponseEntity.ok().body(Mono.just("the topic is successfully deleted with id : " + id));
+        return ResponseEntity.ok().body(
+                Mono.just("the topic is successfully deleted with id : " + id));
     }
 
     //Url "localhost:8080/springBootJpa/topics/getById?id=java
     @RequestMapping(value = "/topics/getById", method = RequestMethod.GET)
     public ResponseEntity<Mono<TopicDto>> getById(@RequestParam(value = "id") String id) {
-        return ResponseEntity.ok().body(Mono.just(this.booksAndTopicsSpringService.getByIdDto(id)));
+        return ResponseEntity.ok().body(
+                Mono.just(this.booksAndTopicsSpringService.getByIdDto(id)));
     }
 
     @RequestMapping(value = "/topics/getByIdAndName", method = RequestMethod.GET)
-    public ResponseEntity<Mono<TopicDto>> getByIdAndName(@RequestParam(value = "id") String id, @RequestParam(value = "name") String name) {
-        return ResponseEntity.ok().body(Mono.just(this.booksAndTopicsSpringService.getByIdAndNameDto(id, name)));
+    public ResponseEntity<Mono<TopicDto>> getByIdAndName(
+            @RequestParam(value = "id") String id,
+            @RequestParam(value = "name") String name) {
+        return ResponseEntity.ok().body(
+                Mono.just(this.booksAndTopicsSpringService.getByIdAndNameDto(id, name)));
     }
 
 
     @RequestMapping(value = "/books")
     public ResponseEntity<Flux<BookDto>> listOfBooks() {
-        return ResponseEntity.ok().body(Flux.fromIterable(this.booksAndTopicsSpringService.getAllBookDtos()));
+        return ResponseEntity.ok().body(Flux.fromIterable(
+                this.booksAndTopicsSpringService.getAllBookDtos()));
     }
 
     @RequestMapping(value = "/books/{id}")
@@ -96,19 +108,24 @@ public class BooksSpringController {
     @RequestMapping(value = "/books/add", method = RequestMethod.POST)
     public ResponseEntity<Mono<String>> addBook(@RequestBody BookDto bookDto) {
         this.booksAndTopicsSpringService.addBookDto(bookDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(Mono.just("the new book is created with details :" + bookDto.toString()));
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                Mono.just("the new book is created with details :" + bookDto.toString()));
     }
 
     @RequestMapping(value = "/books/update/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Mono<String>> updateBook(@RequestBody BookDto bookDto, @PathVariable String id) {
+    public ResponseEntity<Mono<String>> updateBook(
+            @RequestBody BookDto bookDto,
+            @PathVariable String id) {
         this.booksAndTopicsSpringService.updateBookDto(bookDto, id);
-        return ResponseEntity.status(HttpStatus.FOUND).body(Mono.just("the existing book is updated with details :" + bookDto.toString()));
+        return ResponseEntity.status(HttpStatus.FOUND).body(
+                Mono.just("the existing book is updated with details :" + bookDto.toString()));
     }
 
     //Url "localhost:8080/springBootJpa/books/delete/java
     @RequestMapping(value = "/books/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Mono<String>> deleteBook(@PathVariable String id) {
         this.booksAndTopicsSpringService.deleteBook(id);
-        return ResponseEntity.ok().body(Mono.just("the book is successfully deleted with id : " + id));
+        return ResponseEntity.ok().body(
+                Mono.just("the book is successfully deleted with id : " + id));
     }
 }

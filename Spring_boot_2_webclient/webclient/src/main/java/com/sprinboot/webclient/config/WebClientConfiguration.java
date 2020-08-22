@@ -24,7 +24,6 @@ public class WebClientConfiguration {
                                         .addHandlerLast(new WriteTimeoutHandler(10))));
 
         ClientHttpConnector connector = new ReactorClientHttpConnector(httpClient);
-
         return WebClient.builder()
                 .clientConnector(connector)
                 .build();
